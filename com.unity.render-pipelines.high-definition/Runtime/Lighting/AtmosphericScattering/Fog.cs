@@ -73,7 +73,7 @@ namespace UnityEngine.Rendering.HighDefinition
         internal const float minFogScreenResolutionPercentage = (1.0f / 16.0f) * 100;
         internal const float optimalFogScreenResolutionPercentage = (1.0f / 8.0f) * 100;
         internal const float maxFogScreenResolutionPercentage = 0.5f * 100;
-        internal const int maxFogSliceCount = 512;
+        internal const int maxFogSliceCount = 64;
 
         /// <summary>Controls which method to use to control the performance and quality of the volumetric fog.</summary>
         /// <remarks>Balance mode allows you to use a performance-oriented approach to define the quality of the volumetric fog. Manual mode gives you access to the internal set of properties which directly control the effect.</remarks>
