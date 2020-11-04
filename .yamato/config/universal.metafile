@@ -14,11 +14,14 @@ test_platforms:
   - type: playmode
     name: playmode_XR
     utr_flags:
-      - [all]: --extra-editor-arg="-xr-reuse-tests" 
+      - [all]: --extra-editor-arg="-xr-reuse-tests"
   - type: Standalone
     name: Standalone_XR
     utr_flags:
-      - [all]: --extra-editor-arg="-xr-reuse-tests" 
+      - [all]: --extra-editor-arg="-xr-reuse-tests"
+    utr_flags_build:
+      - [Android_OpenGles3, Android_Vulkan]: --timeout=36000
+      - [Win_DX11, Win_DX12, Win_Vulkan]: --timeout=36000
 platforms:
   - name: Win
     apis:
@@ -46,7 +49,7 @@ platforms:
     color_spaces:
       - Linear
   - name: Linux
-    apis: 
+    apis:
       - name: OpenGLCore
         exclude_test_platforms:
           - name: Standalone
