@@ -291,6 +291,8 @@ namespace UnityEngine.Rendering.HighDefinition
             int h = Mathf.RoundToInt(viewportHeight * screenFraction);
             int d = sliceCount;
 
+            Debug.Log("ComputeVolumetricViewportSize " + w + " " + h + " " + d);
+
             return new Vector3Int(w, h, d);
         }
 
@@ -383,6 +385,8 @@ namespace UnityEngine.Rendering.HighDefinition
 
                 rt = RTHandles.Alloc(width, height, depth, colorFormat: GraphicsFormat.R16G16B16A16_SFloat, // 8888_sRGB is not precise enough
                                      dimension: TextureDimension.Tex3D, enableRandomWrite: true, name: name);
+
+                Debug.Log("ResizeVolumetricBuffer " + width + " " + height + " " + depth);
             }
         }
         struct GenerateMaxZParameters
@@ -512,6 +516,8 @@ namespace UnityEngine.Rendering.HighDefinition
             {
                 hdCamera.volumetricHistoryBuffers[i] = RTHandles.Alloc(minSize, minSize, minSize, colorFormat: GraphicsFormat.R16G16B16A16_SFloat, // 8888_sRGB is not precise enough
                                                                        dimension: TextureDimension.Tex3D, enableRandomWrite: true, name: string.Format("VBufferHistory{0}", i));
+
+                Debug.Log("CreateVolumetricHistoryBuffers num " + i + " dimension " + minSize + " " + minSize + " " + minSize);
             }
 
             hdCamera.volumetricHistoryIsValid = false;
