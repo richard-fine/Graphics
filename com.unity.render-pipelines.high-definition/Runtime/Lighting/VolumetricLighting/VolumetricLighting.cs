@@ -291,6 +291,10 @@ namespace UnityEngine.Rendering.HighDefinition
             int h = Mathf.RoundToInt(viewportHeight * screenFraction);
             int d = sliceCount;
 
+            if (w < 4) w = 4;
+            if (h < 4) h = 4;
+            if (d < 4) d = 4;
+
             Debug.Log("ComputeVolumetricViewportSize " + w + " " + h + " " + d);
 
             return new Vector3Int(w, h, d);
