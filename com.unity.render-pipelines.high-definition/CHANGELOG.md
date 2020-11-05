@@ -110,6 +110,7 @@ The version number for this package has increased due to a version update of a r
 - Removed the possibility to have MSAA (through the frame settings) when ray tracing is active.
 - Range handles for decal projector angle fading.
 - Smoother angle fading for decal projector.
+- Now the screen space shadow is only used if the analytic value is valid.
 
 ## [10.1.0] - 2020-10-12
 
