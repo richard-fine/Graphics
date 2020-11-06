@@ -274,10 +274,7 @@ namespace UnityEngine.Rendering.HighDefinition
                 float maxSliceCount = Mathf.Max(1.0f, controller.resolutionDepthRatio * Fog.maxFogSliceCount);
                 sliceCount = (int)Mathf.Lerp(1.0f, maxSliceCount, controller.volumetricFogBudget);
 
-                sliceCount = 64;
-
-                // Evaluate the voxel size
-                voxelSize = 1.0f / screenFraction;
+                voxelSize = (1.0f / screenFraction);
             }
             else
             {
