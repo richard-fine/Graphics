@@ -267,11 +267,14 @@ namespace UnityEngine.Rendering.HighDefinition
             int   sliceCount;
             if (controller.fogControlMode == FogControl.Balance)
             {
+                
                 // Evaluate the ssFraction and sliceCount based on the control parameters
                 float maxScreenSpaceFraction = (1.0f - controller.resolutionDepthRatio) * (Fog.maxFogScreenResolutionPercentage - Fog.minFogScreenResolutionPercentage) + Fog.minFogScreenResolutionPercentage;
                 screenFraction = Mathf.Lerp(Fog.minFogScreenResolutionPercentage, maxScreenSpaceFraction, controller.volumetricFogBudget) * 0.01f;
                 float maxSliceCount = Mathf.Max(1.0f, controller.resolutionDepthRatio * Fog.maxFogSliceCount);
                 sliceCount = (int)Mathf.Lerp(1.0f, maxSliceCount, controller.volumetricFogBudget);
+
+                sliceCount = 64;
 
                 // Evaluate the voxel size
                 voxelSize = 1.0f / screenFraction;
@@ -291,11 +294,13 @@ namespace UnityEngine.Rendering.HighDefinition
             int h = Mathf.RoundToInt(viewportHeight * screenFraction);
             int d = sliceCount;
 
+            /*
             if (w < 4) w = 4;
             if (h < 4) h = 4;
             if (d < 4) d = 4;
+            */
 
-            Debug.Log("ComputeVolumetricViewportSize " + w + " " + h + " " + d);
+            Debug.Log("ComputeVolumetricViewportSize " + w + " " + h + " " + d + " voxelSize " + voxelSize);
 
             return new Vector3Int(w, h, d);
         }
