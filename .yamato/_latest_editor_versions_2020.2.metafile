@@ -46,9 +46,6 @@ editor_versions:
     ios:
       revision: 8f9bb2c34778a938a68d66ba9d97185338d28fd8
       version: ''
-    linux:
-      revision: 8f9bb2c34778a938a68d66ba9d97185338d28fd8
-      version: ''
     macos:
       revision: 8f9bb2c34778a938a68d66ba9d97185338d28fd8
       version: ''
